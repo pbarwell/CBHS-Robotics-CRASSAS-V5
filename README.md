@@ -1,4 +1,3 @@
-# CBHS-Robotics-CRASSAS-V5
 # CRASAS — Competitive Robotics Automated Scout and Analysis Suite
 
 **Version:** V6  
