@@ -47,8 +47,8 @@ Download the start script for your operating system from this repository.
 Open the file in a text editor and fill in your API keys:
 
 ```bash
-YOUTUBE_API_KEY=YOUR_YOUTUBE_API_KEY_HERE \
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE \
+YOUTUBE_API_KEY=YOUR_YOUTUBE_DATA_KEY \
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY \
 ```
 
 Then make it executable by running this once in Terminal:
@@ -62,8 +62,8 @@ chmod +x /path/to/crasas-start.command
 Open the file in Notepad and fill in your API keys:
 
 ```bat
-set YOUTUBE_API_KEY=YOUR_YOUTUBE_API_KEY_HERE
-set GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+set YOUTUBE_API_KEY=YOUR_YOUTUBE_DATA_KEY
+set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
 ---
@@ -108,11 +108,11 @@ C:\Users\yourname\Documents\CRASAS Reports
 
 The two API keys need to be pasted directly into the workflow nodes.
 
-| # | Node | Field | Value |
+| # | Node | Replace | Change to |
 |---|------|-------|-------|
-| 1 | YouTube Search (both nodes) | `key=` in the URL field | Your YouTube Data API v3 key |
-| 2 | Gemini Vision Caption | `const apiKey =` | Your Gemini API key |
-| 3 | Prompt and Summary | `const apiKey =` | Your Gemini API key |
+| 1 | YouTube Search (both nodes) | YOUR_YOUTUBE_DATA_KEY | Your YouTube Data API v3 key |
+| 2 | Gemini Vision Caption | YOUR_GEMINI_API_KEY | Your Gemini API key |
+| 3 | Prompt and Summary | YOUR_GEMINI_API_KEY | Your Gemini API key |
 
 ---
 
