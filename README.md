@@ -1,4 +1,4 @@
-# CRASSAS — Competitive Robotics Automated Specialist Scout and Analysis Suite
+# CRASAS — Competitive Robotics Automated Scout and Analysis Suite
 
 > [!IMPORTANT]
 > **Acknowledgements:** Built by Putu Barwell, CBHS Robotics 2976A. Powered by n8n, Google Gemini, and the YouTube Data API.      
@@ -7,9 +7,9 @@
 
 ---
 
-## What is CRASSAS?
+## What is CRASAS?
 
-CRASSAS is an automated intelligence pipeline for VEX V5 competitive teams.  
+CRASAS is an automated intelligence pipeline for VEX V5 competitive teams.  
 It searches YouTube for recent competition footage, uses Google Gemini to analyse robot designs from the actual videos, and produces a structured markdown report covering mechanism trends, autonomous strategies, and competitive meta shifts.
 
 As far as the author is aware, this is the first publicly released AI-powered competitive scouting system built specifically for VEX V5.
@@ -52,8 +52,8 @@ Each report contains:
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/CRASSAS.git
-cd CRASSAS
+git clone https://github.com/YOUR_USERNAME/CRASAS.git
+cd CRASAS
 ```
 ### 2. Get your API keys
 
@@ -61,7 +61,7 @@ YouTube Data API v3 — Create a project in Google Cloud Console, enable the You
 Gemini API — Go to AI Studio and create a free API key.
 
 ### 3. Configure the workflow
-Open CBHS_Robotics_CRASSAS_V6.json and replace the following placeholders:
+Open CBHS_Robotics_CRASAS_V6.json and replace the following placeholders:
 
 PlaceholderReplace with YOUR_YOUTUBE_DATA_KEYY 
 our YouTube Data API keyYOUR_GEMINI_KEYYour Gemini API key
@@ -81,7 +81,7 @@ npx n8n
 
 Open n8n at http://localhost:5678
 Go to Workflows → Import from file
-Select CBHS_Robotics_CRASSAS_V6.json
+Select CBHS_Robotics_CRASAS_V6.json
 Set the Merge Stats node to Run Once for All Items
 Activate the workflow or trigger it manually
 
@@ -101,7 +101,7 @@ const reportsDir = path.join(os.homedir(), 'YOUR/PATH/TO/REPORTS');
 ```
 
 ### Output
-Reports are saved as markdown files named CRASSAS_REPORT--YYYY-MM-DD.md.
+Reports are saved as markdown files named CRASAS_REPORT--YYYY-MM-DD.md.
 A latest.md symlink always points to the most recent report.
 
 ### Limitations
@@ -113,4 +113,4 @@ Push Back–specific prompts may need updating for future VEX seasons
 
 
 ### Contributing
-Pull requests welcome. If you adapt CRASSAS using different models or input pipelines, please open a PR or issue.
+Pull requests welcome. If you adapt CRASAS using different models or input pipelines, please open a PR or issue.
