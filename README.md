@@ -1,13 +1,12 @@
-<div style="background-color: #0d1117; color: #ffffff; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 30px;">
-  <h1 style="margin: 0; font-size: 2.8em;">CRASAS — Competitive Robotics Automated Scout and Analysis Suite</h1>
-</div>
+> [!NOTE]
+> # CRASAS — Competitive Robotics Automated Scout and Analysis Suite
 
-<div style="background-color: #0a84ff; color: #ffffff; padding: 25px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);">
-  <h2 style="margin: 0 0 15px 0; font-size: 1.6em;">Project Credentials</h2>
-  <p style="margin: 8px 0; font-size: 1.15em;"><strong>Version:</strong> V6</p>
-  <p style="margin: 8px 0; font-size: 1.15em;"><strong>Team:</strong> CBHS Robotics 2976A — Christchurch Boys' High School</p>
-  <p style="margin: 8px 0; font-size: 1.15em;"><strong>Season:</strong> VEX V5 Push Back (2025–2026)</p>
-</div>
+> [!IMPORTANT]
+> **Version:** V6  
+> **Team:** CBHS Robotics 2976A — Christchurch Boys' High School  
+> **Season:** VEX V5 Push Back (2025–2026)
+
+---
 
 ## What is CRASAS?
 
