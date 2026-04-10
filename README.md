@@ -1,16 +1,15 @@
-> [!NOTE]
-> # CRASAS — Competitive Robotics Automated Scout and Analysis Suite
+# CRASSAS — Competitive Robotics Automated Specialist Scout and Analysis Suite
 
 > [!IMPORTANT]
-> **Version:** V6  
-> **Team:** CBHS Robotics 2976A — Christchurch Boys' High School  
-> **Season:** VEX V5 Push Back (2025–2026)
+> **Acknowledgements:** Built by Putu Barwell, CBHS Robotics 2976A. Powered by n8n, Google Gemini, and the YouTube Data API.      
+> **Team:** CBHS Robotics 2976A — Christchurch Boys' High School    
+> **License:** MIT License — free to use, modify, and distribute with attribution.
 
 ---
 
-## What is CRASAS?
+## What is CRASSAS?
 
-CRASAS is an automated weekly intelligence pipeline for VEX V5 competitive teams.  
+CRASSAS is an automated intelligence pipeline for VEX V5 competitive teams.  
 It searches YouTube for recent competition footage, uses Google Gemini to analyse robot designs from the actual videos, and produces a structured markdown report covering mechanism trends, autonomous strategies, and competitive meta shifts.
 
 As far as the author is aware, this is the first publicly released AI-powered competitive scouting system built specifically for VEX V5.
@@ -29,7 +28,7 @@ As far as the author is aware, this is the first publicly released AI-powered co
 
 ## Report Structure
 
-Each weekly report contains:
+Each report contains:
 1. Executive Summary
 2. Mechanism Analysis
 3. Autonomous Routine Trends
@@ -40,12 +39,12 @@ Each weekly report contains:
 8. Meta Trajectory
 
 ---
-
-## Requirements
-- [n8n](https://n8n.io) (v2.12.2, self-hosted via `npx n8n`)
-- A [YouTube Data API v3](https://console.cloud.google.com/) key
-- A [Gemini API](https://aistudio.google.com/apikey) key (free tier sufficient)
-- macOS (tested on macOS 26 beta, Apple Silicon M5)
+> [!IMPORTANT]
+> ## Requirements
+> - [n8n](https://n8n.io) (v2.12.2, self-hosted via `npx n8n`)
+> - A [YouTube Data API v3](https://console.cloud.google.com/) key
+> - A [Gemini API](https://aistudio.google.com/apikey) key (free tier sufficient)
+> - macOS (tested on macOS 26.4, Apple Silicon M5)
 
 ---
 
@@ -53,5 +52,65 @@ Each weekly report contains:
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/crasas.git
-cd crasas
+git clone https://github.com/YOUR_USERNAME/CRASSAS.git
+cd CRASSAS
+```
+### 2. Get your API keys
+
+YouTube Data API v3 — Create a project in Google Cloud Console, enable the YouTube Data API v3, and generate an API key.
+Gemini API — Go to AI Studio and create a free API key.
+
+### 3. Configure the workflow
+Open CBHS_Robotics_CRASSAS_V6.json and replace the following placeholders:
+
+PlaceholderReplace with YOUR_YOUTUBE_DATA_KEYY 
+our YouTube Data API keyYOUR_GEMINI_KEYYour Gemini API key
+Also update the OneDrive path in the Save Report Locally node to match your system:
+JavaScriptconst reportsDir = path.join(os.homedir(), 'YOUR/PATH/TO/REPORTS');
+
+### 4. Start n8n
+```Bash
+N8N_SECURE_COOKIE=false \
+NODE_FUNCTION_ALLOW_BUILTIN=fs,path,os \
+EXECUTIONS_TIMEOUT=7200 \
+N8N_RUNNERS_TASK_TIMEOUT=3600 \
+npx n8n
+```
+
+### 5. Import the workflow
+
+Open n8n at http://localhost:5678
+Go to Workflows → Import from file
+Select CBHS_Robotics_CRASSAS_V6.json
+Set the Merge Stats node to Run Once for All Items
+Activate the workflow or trigger it manually
+
+### Configuration
+Open `CBHS_Robotics_CRASAS_V6.json` and replace the following placeholders:
+
+| Placeholder | Replace with |
+|---|---|
+| `YOUR_YOUTUBE_DATA_KEY` | Your YouTube Data API key |
+| `YOUR_GEMINI_KEY` | Your Gemini API key |
+
+Also update the OneDrive path in the **Save Report Locally** node to match
+your system:
+
+```javascript
+const reportsDir = path.join(os.homedir(), 'YOUR/PATH/TO/REPORTS');
+```
+
+### Output
+Reports are saved as markdown files named CRASSAS_REPORT--YYYY-MM-DD.md.
+A latest.md symlink always points to the most recent report.
+
+### Limitations
+
+Gemini free tier allows 250 requests/day — sufficient for weekly use
+Vision analysis is text-based inference from video content, not frame extraction
+Accuracy depends on video quality and whether robots are clearly visible
+Push Back–specific prompts may need updating for future VEX seasons
+
+
+### Contributing
+Pull requests welcome. If you adapt CRASSAS using different models or input pipelines, please open a PR or issue.
