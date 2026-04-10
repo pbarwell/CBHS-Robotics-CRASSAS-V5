@@ -82,7 +82,7 @@ Open `CBHS_Robotics_CRASAS_V6.json` and replace the following placeholders:
 
 | Placeholder | Replace with |
 |---|---|
-| `AIzaSyCmioVwIWrQ...` | Your YouTube Data API key |
+| `YOUR_YOUTUBE_DATA_KEY` | Your YouTube Data API key |
 | `YOUR_GEMINI_KEY` | Your Gemini API key |
 
 Also update the OneDrive path in the **Save Report Locally** node to match
