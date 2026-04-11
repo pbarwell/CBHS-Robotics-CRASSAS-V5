@@ -73,7 +73,7 @@ set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 In the workflow JSON, the Save Report node writes to a folder on your machine. Before importing, open the JSON in a text editor and find this line and replace it with a folder path of your choice:
 
 ```
-REPLACE_WITH_YOUR_REPORTS_FOLDER_PATH
+/Path/To/Your/Folder
 ```
 
 **macOS example:**
