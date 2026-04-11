@@ -1,7 +1,7 @@
 # CRASAS — Competitive Robotics Automated Scout and Analysis Suite
 
 > [!IMPORTANT]
-> **Acknowledgements:** Built by Putu Barwell, CBHS Robotics 2976A. Powered by n8n, Google Gemini, and the YouTube Data API.      
+> **Acknowledgements:** Built by Putu Barwell, the Captain of CBHS Robotics 2976A.      
 > **Team:** CBHS Robotics 2976A — Christchurch Boys' High School    
 > **License:** MIT License — free to use, modify, and distribute with attribution.
 
