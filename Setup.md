@@ -2,18 +2,20 @@
 
 CRASAS runs on [n8n](https://n8n.io), a local workflow automation tool, and uses the Google Gemini and YouTube Data APIs for video analysis and report generation. Follow these steps to get it running on your machine.
 
+> **Tested on:** macOS 26.4 (Apple Silicon). Windows instructions are included and should work, but have not been verified.
+
 ---
 
 ## Step 1 — Install Dependencies
 
 | # | What | Command | Notes |
 |---|------|---------|-------|
-| 1 | Node.js | Download from [nodejs.org](https://nodejs.org) | v18 or higher required |
+| 1 | Node.js | Download from [nodejs.org](https://nodejs.org) | v22.22.1 used; v18 or higher should work |
 | 2 | n8n | `npm install -g n8n` | Installs n8n globally |
 | 3 | md-to-pdf | `npm install -g md-to-pdf` | Converts reports to PDF |
-| 4 | Verify Node | `node --version` | Should print v18.x or higher |
-| 5 | Verify n8n | `npx n8n --version` | Should print 2.x.x |
-| 6 | Verify md-to-pdf | `md-to-pdf --version` | Should print without error |
+| 4 | Verify Node | `node --version` | Should print v22.22.1 or similar |
+| 5 | Verify n8n | `npx n8n --version` | Should print 2.12.2 or similar |
+| 6 | Verify md-to-pdf | `md-to-pdf --version` | Should print 5.2.5 or similar |
 
 ---
 
@@ -57,36 +59,34 @@ Then make it executable by running this once in Terminal:
 chmod +x /path/to/crasas-start.command
 ```
 
+You can then launch CRASAS by double-clicking the `.command` file in Finder.
+
 ### Windows — `crasas-start.bat`
 
 Open the file in Notepad and fill in your API keys:
 
 ```bat
-set YOUTUBE_API_KEY=YOUR_YOUTUBE_DATA_KEY
 set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
+
+Run it by double-clicking the `.bat` file in Explorer, or by running it from Command Prompt.
+
+> **Windows note:** If you see a SmartScreen warning, click **More info → Run anyway**. The script is not signed. Also be aware that the command taskkill /F /IM node.exe kills all Node processes including any Node-based tools.
 
 ---
 
 ## Step 5 — Set Your Reports Folder
 
-In the workflow JSON, the Save Report node writes to a folder on your machine. Before importing, open the JSON in a text editor and find this line and replace it with a folder path of your choice:
-
-```
+Before importing the workflow, open `CBHS_Robotics_CRASAS.json` in a text editor and find the path placeholder in the Save Report node. Replace it with a folder path of your choice:
 /Path/To/Your/Folder
-```
 
 **macOS example:**
-
-```
 /Users/yourname/Documents/CRASAS Reports
-```
 
 **Windows example:**
-
-```
 C:\Users\yourname\Documents\CRASAS Reports
-```
+
+> Make sure the folder exists before running the workflow — n8n will not create it automatically.
 
 ---
 
@@ -109,7 +109,7 @@ C:\Users\yourname\Documents\CRASAS Reports
 The two API keys need to be pasted directly into the workflow nodes.
 
 | # | Node | Replace | Change to |
-|---|------|-------|-------|
+|---|------|---------|-----------|
 | 1 | YouTube Search (both nodes) | YOUR_YOUTUBE_DATA_KEY | Your YouTube Data API v3 key |
 | 2 | Gemini Vision Caption | YOUR_GEMINI_API_KEY | Your Gemini API key |
 | 3 | Prompt and Summary | YOUR_GEMINI_API_KEY | Your Gemini API key |
@@ -131,4 +131,6 @@ The two API keys need to be pasted directly into the workflow nodes.
 
 ## Stopping n8n
 
-When you are done, run the stop script (`crasas-stop.command` on macOS, `crasas-stop.bat` on Windows) or press `Ctrl+C` in the terminal window where n8n is running.
+**macOS:** Run `crasas-stop.command` or press `Ctrl+C` in the Terminal window where n8n is running.
+
+**Windows:** Run `crasas-stop.bat`, or close the Command Prompt window where n8n is running.
