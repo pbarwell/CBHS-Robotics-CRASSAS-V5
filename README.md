@@ -44,6 +44,5 @@ Each report contains:
 > - [n8n](https://n8n.io) (v2.12.2, self-hosted via `npx n8n`)
 > - A [YouTube Data API v3](https://console.cloud.google.com/) key
 > - A [Gemini API](https://aistudio.google.com/apikey) key (free tier sufficient)
-> - macOS (tested on macOS 26.4, Apple Silicon M5)
 
 Pull requests welcome. If you adapt CRASAS using different models or input pipelines, please open a PR or issue.
