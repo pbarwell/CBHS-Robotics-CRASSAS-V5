@@ -6,7 +6,7 @@ CRASAS runs on [n8n](https://n8n.io), a local workflow automation tool, and uses
 
 ---
 
-## Step 1 — Install Dependencies
+## Step 1 — Install and Verify Dependencies
 
 | # | What | Command | Notes |
 |---|------|---------|-------|
