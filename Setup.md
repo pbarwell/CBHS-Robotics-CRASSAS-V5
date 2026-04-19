@@ -10,10 +10,10 @@ CRASAS runs on [n8n](https://n8n.io), a local workflow automation tool, and uses
 
 | # | What | Command | Notes |
 |---|------|---------|-------|
-| 1 | Node.js | Download from [nodejs.org](https://nodejs.org) | v22.22.1 used; v18 or higher should work |
+| 1 | Node.js | Download from [nodejs.org](https://nodejs.org) | v24 used; v22 or higher should work |
 | 2 | n8n | `npm install -g n8n` | Installs n8n globally |
 | 3 | md-to-pdf | `npm install -g md-to-pdf` | Converts reports to PDF |
-| 4 | Verify Node | `node --version` | Should print v22.22.1 or similar |
+| 4 | Verify Node | `node --version` | Should print v24.22.1 or similar |
 | 5 | Verify n8n | `npx n8n --version` | Should print 2.12.2 or similar |
 | 6 | Verify md-to-pdf | `md-to-pdf --version` | Should print 5.2.5 or similar |
 
@@ -46,10 +46,9 @@ Download the start script for your operating system from this repository.
 
 ### macOS — `crasas-start.command`
 
-Open the file in a text editor and fill in your API keys:
+Open the file in TextEdit and fill in your API keys:
 
 ```bash
-YOUTUBE_API_KEY=YOUR_YOUTUBE_DATA_KEY \
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY \
 ```
 
@@ -58,6 +57,7 @@ Then make it executable by running this once in Terminal:
 ```bash
 chmod +x /path/to/crasas-start.command
 ```
+**Note:** If you install the Stop Command (crasas-stop.command), you will have to use this command with the path to it to make it executable.
 
 You can then launch CRASAS by double-clicking the `.command` file in Finder.
 
@@ -71,7 +71,7 @@ set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 
 Run it by double-clicking the `.bat` file in Explorer, or by running it from Command Prompt.
 
-> **Windows note:** If you see a SmartScreen warning, click **More info → Run anyway**. The script is not signed. Also be aware that the command taskkill /F /IM node.exe kills all Node processes including any Node-based tools.
+> **Note:** If you see a SmartScreen warning, click **More info → Run anyway**. The script is not signed. Also be aware that the command taskkill /F /IM node.exe kills all Node processes including any Node-based tools.
 
 ---
 
@@ -80,7 +80,7 @@ Run it by double-clicking the `.bat` file in Explorer, or by running it from Com
 Before importing the workflow, open `CBHS_Robotics_CRASAS.json` in a text editor and find the path placeholder in the Save Report node. Replace it with a folder path of your choice:
 /Path/To/Your/Folder
 
-**macOS example:**
+**MacOS example:**
 /Users/yourname/Documents/CRASAS Reports
 
 **Windows example:**
@@ -95,7 +95,7 @@ C:\Users\yourname\Documents\CRASAS Reports
 | # | Action |
 |---|--------|
 | 1 | Run your start script to launch n8n |
-| 2 | Open your browser and go to `http://127.0.0.1:5678` |
+| 2 | Press 'o' or open your browser and go to `http://127.0.0.1:5678` |
 | 3 | Create a free local account when prompted |
 | 4 | Click the **+** button to create a new workflow |
 | 5 | Click the three-dot menu (⋯) → **Import from file** |
