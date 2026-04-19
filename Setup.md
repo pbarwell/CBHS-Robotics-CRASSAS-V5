@@ -11,9 +11,9 @@ CRASAS runs on [n8n](https://n8n.io), a local workflow automation tool, and uses
 | # | What | Command | Notes |
 |---|------|---------|-------|
 | 1 | Node.js | Download via Homebrew (`brew install node @24`) or from [nodejs.org](https://nodejs.org) | v24 used; v22 or higher should work |
-| 2 | n8n | `npm install -g n8n` | Installs n8n globally |
-| 3 | md-to-pdf | `npm install -g md-to-pdf` | Converts reports to PDF |
-| 4 | Verify Node | `node --version` | Should print v24.22.1 or similar |
+| 2 | Verify Node | `node --version` | Should print v24.22.1 or similar |
+| 3 | n8n | `npm install -g n8n` | Installs n8n globally |
+| 4 | md-to-pdf | `npm install -g md-to-pdf` | Converts reports to PDF |
 | 5 | Verify n8n | `npx n8n --version` | Should print 2.12.2 or similar |
 | 6 | Verify md-to-pdf | `md-to-pdf --version` | Should print 5.2.5 or similar |
 
